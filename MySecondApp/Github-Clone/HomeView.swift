@@ -47,6 +47,11 @@ struct HomeView: View {
     ]
     var body: some View {
         ScrollView {
+            Text("Home")
+                .font(.title2)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
           RoundedRectangle(cornerRadius: 8)
             .frame(height: 8 * 20)
             .padding()

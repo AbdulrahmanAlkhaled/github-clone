@@ -9,26 +9,28 @@ import SwiftUI
 
 struct CheckView: View {
     var body: some View {
-        TabView{
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            ExploreView()
-                .tabItem { Image(systemName: "doc.text.magnifyingglass")
-                    Text("Explore")
-                }
-            NotificationsView()
-                .tabItem {
-                    Image(systemName: "light.beacon.max.fill")
-                    Text("Notification")
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle")
-                    Text("Profile")
-                }
+        NavigationStack{
+            TabView{
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+                ExploreView()
+                    .tabItem { Image(systemName: "doc.text.magnifyingglass")
+                        Text("Explore")
+                    }
+                NotificationsView()
+                    .tabItem {
+                        Image(systemName: "light.beacon.max.fill")
+                        Text("Notification")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.crop.circle")
+                        Text("Profile")
+                    }
+            }
         }
     }
 }
