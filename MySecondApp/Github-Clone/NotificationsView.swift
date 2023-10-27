@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack{
+                Text("Inbox")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                VStack(spacing: 210){
+                    Spacer()
+                    Text("Inbox is empty!")
+                        .font(.title2)          
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+            }
+        }
+        
     }
 }
-
+    
 #Preview {
     NotificationsView()
 }

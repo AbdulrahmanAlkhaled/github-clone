@@ -8,92 +8,163 @@
 import SwiftUI
 
 struct LoginAuthOption: Identifiable{
+    
     let id = UUID()
     let leadingImageName: String
     let title: String
     let titleColor: Color
     let backgroundColor: Color
     let borderColor: Color
+    let imageColor: Color
 }
-let loginOptions: Array<LoginAuthOption> = [
-    .init(leadingImageName: "apple.logo", title: "sigin with apple", titleColor: .white, backgroundColor: .blue, borderColor: .gray.opacity(0.5)),
-    .init(leadingImageName: "apple.logo", title: "sigin with apple", titleColor: .black, backgroundColor: .red, borderColor: .gray.opacity(0.5)),
-    .init(leadingImageName: "apple.logo", title: "sigin with apple", titleColor: .black, backgroundColor: .pink, borderColor: .gray.opacity(0.5)),
+
+var loginOptions: Array<LoginAuthOption> = [
+    .init(leadingImageName: "google", title: "Continue with Google", titleColor: .black, backgroundColor: .white, borderColor: .gray.opacity(0.5),imageColor: .black),
+    .init(leadingImageName: "meta_", title: "Continue with Meta", titleColor: .white, backgroundColor: .black, borderColor: .gray.opacity(0.5),imageColor: .white),
+    .init(leadingImageName: "apple22", title: "Continue with Apple", titleColor: .white, backgroundColor: .blue, borderColor: .gray.opacity(0.5),imageColor: .white),
    ]
 
 struct AuthView: View {
     var body: some View {
-        VStack{
+        NavigationStack {
             VStack{
-                Text("Github Clone")
-                    .font(.largeTitle)
-                    .bold()
-            }
-            .frame(maxHeight: .infinity)
-           // .background(.red)
-
-            VStack(spacing: 8){
-                ForEach(loginOptions){option in
-                    makeLoginButton(option: option)
-                    
+                VStack{
+                    Text("Github Clone")
+                        .font(.largeTitle)
+                        .bold()
                 }
-                NavigationLink(
-                    destination: {
-                        Text("option.title")
-                        SignUpView()
-                    },
-                    label: {
-                        ZStack{
-                            Text("option.title")
-                                .bold()
-                                .underline()
-                                .foregroundStyle(.gray)
-                            
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                            
-                            
-                                .padding(.horizontal)
-                        }
+                .frame(maxHeight: .infinity)
+                // .background(.red)
+                
+                VStack(spacing: 8){
+                    ForEach(loginOptions){ option in
+                        makeLoginButton(option: option)
                     }
-                )
-                Text("[Terms of use](https://apple.com)")
-                .font(.footnote)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
+                    NavigationLink(
+                        destination: {
+                            SignInView()
+                        },
+                        label: {
+                            ZStack{
+                                HStack{
+                                    Image(systemName: "envelope.fill")
+                                        .resizable()
+                                        .frame(width: 30, height: 25)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                    Spacer()
+                                }
+                                Text("Login with your email")
+                                    .padding(20)
+                                    .bold()
+                                    .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)}
+                                    .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                   // .stroke( lineWidth: 2)
+                                    .fill(.pink)
+                                        .containerShape(RoundedRectangle(cornerRadius: 16))
+                                        
+                                    )
+                                    .padding(.horizontal)
+                            
+                        }
+                    )
+                    NavigationLink(
+                        destination: {
+                            SignUpView()
+                        },
+                        label: {
+                            ZStack{
+                                Text("New User? Sign Up ")
+                                
+                                    .bold()
+                                    .underline()
+                                    .foregroundStyle(.gray)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                
+                                
+                                    .padding(.horizontal)
+                            }
+                        }
+                    )
+                    
+                    Text("[Terms and policy](https://apple.com)")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
+                .frame(maxHeight: .infinity)
             }
-            .frame(maxHeight: .infinity)
-          //  .background(.blue)
         }
     }
     func makeLoginButton(option: LoginAuthOption)-> some View{
-        NavigationLink(
-        destination: {
-            Text(option.title)
-        },
-        label: {
-            ZStack{
-                HStack{
-                    Image(systemName: "swift")
-                    Spacer()
-                                   }
+        //        NavigationLink(
+        //            destination:  Destination,
+        //        )
+        
+//        NavigationLink(
+//            destination: { ProgressView()
+//        },
+//        label: {
+//            ZStack{
+//                HStack{
+//                    Image(systemName: "swift")
+//                    Spacer()
+//                }
+//                Text(option.title)
+//                    .bold()
+//                    .foregroundStyle(option.titleColor)
+//            }
+//            .padding()
+//            .frame(maxWidth: .infinity)
+//            .background(
+//                RoundedRectangle(cornerRadius: 16)
+//                    .stroke(option.borderColor, lineWidth: 2)
+//                    .fill(option.backgroundColor)
+//                    .clipped().containerShape(RoundedRectangle(cornerRadius: 16))
+//            )
+//           
+//            .padding(.horizontal)
+//            
+//        })
+//        .buttonStyle(.plain)
+//    }
+    
+    
+            NavigationLink {
                 Text(option.title)
-                    .bold()
-                    .foregroundStyle(option.titleColor)
-            }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(
-            RoundedRectangle(cornerRadius: 16)
+                Image(systemName: option.leadingImageName)
+            } label: {
+                ZStack{
+                    HStack{
+                        Image(option.leadingImageName)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(option.imageColor)
+                        Spacer()
+                                       }
+                    Text(option.title)
+                        .bold()
+                        .foregroundStyle(option.titleColor)
+                }
+    
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(
+                RoundedRectangle(cornerRadius: 10)
                 .stroke(option.borderColor, lineWidth: 2)
-                .fill(option.backgroundColor)
-                .clipped().containerShape(RoundedRectangle(cornerRadius: 16))
-            )
-            .padding(.horizontal)
+                    .fill(option.backgroundColor)
+                    .containerShape(RoundedRectangle(cornerRadius: 16))
+                )
+                .padding(.horizontal)
+                }
+           .buttonStyle(.plain)
             }
-        )
-        }
-    }
+    
+}
+
 
 
 #Preview {

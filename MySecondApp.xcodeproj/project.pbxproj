@@ -14,6 +14,7 @@
 		B43F029B2AEA4A25003F2855 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F029A2AEA4A25003F2855 /* AuthView.swift */; };
 		B43F029E2AEA54B5003F2855 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F029D2AEA54B5003F2855 /* SignUpView.swift */; };
 		B43F02A02AEA61C4003F2855 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F029F2AEA61C4003F2855 /* SignInView.swift */; };
+		B43F02A22AEA72AF003F2855 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F02A12AEA72AF003F2855 /* RootView.swift */; };
 		B4C8C1FE2AE9001800FD8507 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8C1FD2AE9001800FD8507 /* ProfileView.swift */; };
 		B4C8C2002AE9003700FD8507 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8C1FF2AE9003700FD8507 /* HomeView.swift */; };
 		B4C8C2022AE9004100FD8507 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8C2012AE9004100FD8507 /* ExploreView.swift */; };
@@ -30,6 +31,7 @@
 		B43F029A2AEA4A25003F2855 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		B43F029D2AEA54B5003F2855 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B43F029F2AEA61C4003F2855 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B43F02A12AEA72AF003F2855 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B4C8C1FD2AE9001800FD8507 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B4C8C1FF2AE9003700FD8507 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B4C8C2012AE9004100FD8507 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				B43F029A2AEA4A25003F2855 /* AuthView.swift */,
 				B43F029D2AEA54B5003F2855 /* SignUpView.swift */,
 				B43F029F2AEA61C4003F2855 /* SignInView.swift */,
+				B43F02A12AEA72AF003F2855 /* RootView.swift */,
 			);
 			path = "Github-Clone";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				B4C8C1FE2AE9001800FD8507 /* ProfileView.swift in Sources */,
 				B4C8C2042AE9005200FD8507 /* NotificationsView.swift in Sources */,
 				B42D285F2AE7A819000667A8 /* MySecondAppApp.swift in Sources */,
+				B43F02A22AEA72AF003F2855 /* RootView.swift in Sources */,
 				B4C8C2022AE9004100FD8507 /* ExploreView.swift in Sources */,
 				B43F029E2AEA54B5003F2855 /* SignUpView.swift in Sources */,
 				B43F029B2AEA4A25003F2855 /* AuthView.swift in Sources */,

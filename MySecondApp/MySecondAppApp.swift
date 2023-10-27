@@ -11,7 +11,7 @@ import SwiftUI
 struct MySecondAppApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+CheckView()
         }
     
     }

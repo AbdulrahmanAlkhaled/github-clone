@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CheckView: View {
     var body: some View {
-        NavigationStack{
+      //  NavigationStack{
             TabView{
                 HomeView()
                     .tabItem {
@@ -33,7 +33,7 @@ struct CheckView: View {
             }
         }
     }
-}
+//}
 struct CheckView_Preview: PreviewProvider{
     static var previews: some View{
         CheckView()

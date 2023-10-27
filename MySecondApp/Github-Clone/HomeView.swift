@@ -54,6 +54,7 @@ struct HomeView: View {
                 .padding()
           RoundedRectangle(cornerRadius: 8)
             .frame(height: 8 * 20)
+            .foregroundColor(.blue)
             .padding()
           VStack {
             HStack {
@@ -125,7 +126,7 @@ struct HomeView: View {
         HStack {
           Image(systemName: row.leadingImageName)
             .resizable()
-            .scaledToFit()
+           // .scaledToFit()
             .frame(width: 24, height: 24)
             .foregroundColor(row.leadingImageForegroundColor)
             .padding(8)

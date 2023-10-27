@@ -2,20 +2,20 @@
 //  SignUpView.swift
 //  MySecondApp
 //
-//  Created by ABDULRAHMAN AL-KHALED on 26/10/2023.
+//  Created by ABDULRAHMAN AL-KHALED on 26/10/2023
 //
 
 import SwiftUI
 
 struct SignUpView: View {
-    let name: String = " "
-    let email: String = " "
-    let Password: String = " "
-    let confirmPassword: String = " "
+ var name: String = ""
+   var email: String = ""
+   var Password: String = ""
+   var confirmPassword: String = ""
     
-    let nameError: String = "name is Empty"
-    let emailError: String = " "
-    let confirmPasswordError: String = " "
+   var nameError: String = "name is Empty"
+   var emailError: String = "email is Empty"
+   var confirmPasswordError: String = "invalid Password"
    
     var body: some View {
         VStack{
@@ -23,11 +23,12 @@ struct SignUpView: View {
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(
+                    
             RoundedRectangle(cornerRadius: 16)
-                .stroke(nameError.isEmpty ? .black : .red,lineWidth: 2)
-                .fill()
+            
+               .stroke(nameError.isEmpty ? .black : .red, lineWidth: 2)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
-                
+
             )
             .padding(.horizontal)
             if name.isEmpty{
@@ -43,7 +44,7 @@ struct SignUpView: View {
                 .background(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(lineWidth: 2)
-                .fill()
+                .fill(.blue)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
             )
             .padding(.horizontal)
@@ -71,7 +72,7 @@ struct SignUpView: View {
             )
             .padding(.horizontal)
             Spacer()
-        }  
+        }
         .navigationTitle("Sign up")
         .navigationBarTitleDisplayMode(.inline)
     }
